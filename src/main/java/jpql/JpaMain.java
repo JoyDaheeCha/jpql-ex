@@ -16,14 +16,14 @@ public class JpaMain {
 
         try {
             Member member = new Member();
-            member.setUsernmae("dahee");
+            member.setUsername("dahee");
             member.setAge(10);
             em.persist(member);
 
             em.flush();
             em.clear();
 
-            List<Team> result = em.createQuery("select t from Member m join m.team t", Team.class)
+            List<MemberDto> result = em.createQuery("select new jpql.MemberDto(m.username, m.age) from Member m", MemberDto.class)
                     .getResultList();
 
 

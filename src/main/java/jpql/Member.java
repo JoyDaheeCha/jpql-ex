@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Member {
     @Id @GeneratedValue
     private Long id;
-    private String usernmae;
+    private String username;
     private int age;
 
     @ManyToOne
@@ -22,12 +22,12 @@ public class Member {
         this.id = id;
     }
 
-    public String getUsernmae() {
-        return usernmae;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsernmae(String usernmae) {
-        this.usernmae = usernmae;
+    public void setUsername(String usernmae) {
+        this.username = usernmae;
     }
 
     public int getAge() {
